@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Landon Melesky · GIS Portfolio</title>
+  <meta name="description" content="GIS, remote sensing, machine learning and GeoAI projects by Landon Melesky, M.S. Geography student at Texas A&M University.">
+  <meta property="og:title" content="Landon Melesky · GIS Portfolio">
+  <meta property="og:description" content="Remote sensing, spatial statistics, machine learning and MCP-based GeoAI tools, built on open data.">
+  <meta property="og:image" content="https://landon2199.github.io/assets/img/covid-hero.png">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">Landon Melesky <span>/ gis</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">GIS · REMOTE SENSING · MACHINE LEARNING · GEOAI</div>
+      <h1>I turn satellite and drone imagery into measurements people can check.</h1>
+      <p class="lead">M.S. student in Geography at Texas A&amp;M University (expected May 2028). I build open, reproducible workflows: from raw imagery to calibrated reflectance, from pixels to statistics with honest accuracy assessment, and from data to AI assistants that cite their sources.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See projects</a>
+        <a class="btn" href="https://github.com/landon2199">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/landonmelesky/">LinkedIn</a>
+      </div>
+      <div class="stats" aria-label="At a glance">
+        <div class="stat"><b>3</b><span>GeoAI projects: an MCP server, a foundation model and Segment Anything</span></div>
+        <div class="stat"><b>3</b><span>Esri training certificates</span></div>
+        <div class="stat"><b>62</b><span>students taught in three geodatabase lab sections</span></div>
+        <div class="stat"><b>8</b><span>open-source projects, each built only from public data</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="section-sub">Each project runs end to end from public data, states what it covers and what it leaves out, and reports its accuracy, not just its maps.</p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/landcover-hero.png" alt="Sentinel-2 land-cover classification of Bryan–College Station, Texas, next to ESA WorldCover."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">scikit-learn</span><span class="tag">Sentinel-2</span><span class="tag">STAC</span><span class="tag">accuracy assessment</span></div>
+            <h3>Land cover with honest accuracy</h3>
+            <p>Random-forest land-cover classification of Bryan–College Station from Sentinel-2, showing how random cross-validation overstates accuracy compared with spatial block validation, with area estimates and 95% intervals (Olofsson et al. 2014).</p>
+            <p class="result" data-fill="landcover">Held-out agreement with ESA WorldCover: 0.81 ± 0.015 (area-weighted, 95% CI). With polygon-like training patches, random cross-validation scored 0.89 balanced accuracy but held-out blocks only 0.83; all six area estimates' 95% intervals contained the reference area.</p>
+            <div class="links"><a href="https://github.com/landon2199/sentinel2-landcover-ml">Code &amp; README →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/mcp-hero.png" alt="Open Earth MCP: tools an AI assistant can call for imagery, NDVI, land cover and elevation."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">MCP</span><span class="tag">GeoAI</span><span class="tag">Python</span><span class="tag">Planetary Computer</span></div>
+            <h3>Open Earth MCP server</h3>
+            <p>A Model Context Protocol server that lets Claude or any MCP client look up open Earth-observation data (Sentinel-2 NDVI time series, land cover, elevation) and returns the source scenes and dates with every answer, plus a verify check.</p>
+            <p class="result" data-fill="mcp">Six tools, one resource and one prompt; 29 offline tests plus a live test. Its verify tool recomputes NDVI from the raw bands by a second code path: 0.1685 vs 0.1683 on a Brazos River cropland field whose 2026 season it traced from 0.18 in March to a 0.91 peak in June.</p>
+            <div class="links"><a href="https://github.com/landon2199/open-earth-mcp">Code &amp; README →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/heat-hero.png" alt="Houston urban heat: Getis-Ord Gi* hot and cold spots of land surface temperature by census tract."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">PySAL</span><span class="tag">Landsat LST</span><span class="tag">spatial regression</span><span class="tag">Census</span></div>
+            <h3>Houston heat hot spots</h3>
+            <p>Where is Harris County hottest in summer, and how much does vegetation explain? Landsat land surface temperature by census tract, Getis-Ord Gi* and LISA clusters, and a spatial regression that accounts for neighbors.</p>
+            <p class="result" data-fill="heat">Summer surface temperature is strongly clustered across 1,111 tracts (Moran's I 0.62). After accounting for neighbors, tracts are about 1.9 °C cooler for every +0.1 NDVI; 147 tracts are significant hot spots after false-discovery correction.</p>
+            <div class="links"><a href="https://landon2199.github.io/houston-heat-hotspots/map.html">Interactive map →</a><a href="https://github.com/landon2199/houston-heat-hotspots">Code →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/toolbox-hero.png" alt="Accuracy Assessment Toolbox for ArcGIS Pro: area estimates with 95% confidence intervals compared with pixel counting."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">ArcGIS Pro</span><span class="tag">ArcPy</span><span class="tag">Python toolbox</span><span class="tag">standards</span></div>
+            <h3>Accuracy Assessment Toolbox for ArcGIS Pro</h3>
+            <p>A Python toolbox that adds what Compute Confusion Matrix leaves out: stratified sample design, area-adjusted accuracy with 95% confidence intervals (Olofsson et al. 2014, with an optional Wilson interval), and buffered spatial blocks for train/test splits. Tested inside ArcGIS Pro 3.7.</p>
+            <p class="result" data-fill="toolbox">Reproduces the class areas in Olofsson et al.'s worked example to the hectare. In a synthetic demo, pixel counting overstated cropland by 39%; over 1,000 repeat samples the 95% intervals covered the true area 95% of the time for four of five classes, and the report flags the one that fell short.</p>
+            <div class="links"><a href="https://github.com/landon2199/arcgis-accuracy-toolbox">Code &amp; README →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/embed-hero.png" alt="Query-by-example search: one Sentinel-2 image chip and the most similar chips found with a self-supervised foundation model."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">PyTorch</span><span class="tag">TorchGeo</span><span class="tag">foundation model</span><span class="tag">GPU</span></div>
+            <h3>Find places that look alike</h3>
+            <p>Query-by-example search over Sentinel-2 imagery with a self-supervised foundation model (SSL4EO-S12): pick one place and retrieve the places that look most like it, then measure how often the matches share its land cover against a spectral baseline.</p>
+            <p class="result" data-fill="embed">Over 7,974 chips of the Brazos Valley, all 24 top matches for three example queries shared the query's land cover (15 of 24 for a spectral baseline). On coarse classes overall the two scored about the same (precision@10 0.85 vs 0.84); the model's edge was on rare classes such as water (0.87 vs 0.78).</p>
+            <div class="links"><a href="https://github.com/landon2199/geoai-embedding-search">Code &amp; README →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/covid-hero.png" alt="COVID-19 in Texas: map of how many months each county was a significant space-time hot spot, March 2020 to February 2023, beside the statewide weekly case curve."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">space-time analysis</span><span class="tag">PySAL</span><span class="tag">web map</span><span class="tag">public health</span></div>
+            <h3>COVID-19 in Texas: where hot spots emerged</h3>
+            <p>Weekly case and death rates for all 254 Texas counties, March 2020 to February 2023, smoothed for small populations (Empirical Bayes), with Getis-Ord Gi* by wave, a space-time hot spot analysis with Mann-Kendall trends, and an interactive map with a monthly time slider.</p>
+            <p class="result" data-fill="covid">174 of 253 analyzed counties were a significant hot spot in at least one month, peaking at 76 in December 2020; in the Omicron waves hot spots returned to South Texas. One county whose reported cases exceeded its population (likely non-resident workers) is excluded, with a sensitivity run that keeps it. Nonmetro counties had a higher death rate than metro counties in every wave (538 vs 294 per 100,000 overall, not age-adjusted).</p>
+            <div class="links"><a href="https://landon2199.github.io/texas-covid-spacetime/">Interactive map →</a><a href="https://github.com/landon2199/texas-covid-spacetime">Code →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/sam-hero.jpg" alt="Segment Anything applied to NAIP aerial imagery: extracted building and field outlines compared with reference footprints."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">Segment Anything</span><span class="tag">NAIP</span><span class="tag">PyTorch</span><span class="tag">feature extraction</span></div>
+            <h3>Segment Anything on aerial imagery</h3>
+            <p>Extracting buildings and fields from 0.6 m NAIP imagery with Meta's Segment Anything Model, then scoring the outlines against reference building footprints at the object level (IoU ≥ 0.5) against a simple baseline.</p>
+            <p class="result" data-fill="sam">On a held-out area, text-prompted SAM (Grounding DINO + SAM) reached building F1 0.69 (95% CI 0.62–0.74) against Microsoft footprints, vs 0.50 (0.42–0.57) for an NDVI/brightness baseline; it was precise (0.85) but missed about 40% of buildings.</p>
+            <div class="links"><a href="https://github.com/landon2199/geoai-sam-naip">Code &amp; README →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img style="object-fit:contain;background:#fff" src="assets/img/daylight.svg" alt="Card: sunset and civil dusk in College Station, Texas, across the academic year."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">NOAA solar equations</span><span class="tag">teaching</span></div>
+            <h3>Daylight in College Station</h3>
+            <p>When does it get dark across the academic year? One self-contained page solves the sun's position in the browser with the NOAA solar-position equations, checked against U.S. Naval Observatory tables (within about 20 s).</p>
+            <div class="links"><a href="https://landon2199.github.io/college-station-daylight/">Live page →</a><a href="https://github.com/landon2199/college-station-daylight">Code →</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <h2>Research</h2>
+      <p class="section-sub">My M.S. research is part of a funded project led by my advisor, Dr. Leila Character. It uses drone hyperspectral imaging and machine learning to study tropical forest vegetation: from field collection, to calibrated surface reflectance with the empirical line method, to models that rank narrow bands and spectral indices. Project details, data and code stay private until the work is published.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill"><h3>GIS</h3><p>ArcGIS Pro, ArcGIS Online, StoryMaps, QGIS, geodatabase design, spatial SQL (SQL Server), geoprocessing, cartography, linear referencing.</p></div>
+        <div class="skill"><h3>Remote sensing</h3><p>Sentinel-2, Landsat, NAIP, hyperspectral, Google Earth Engine, ENVI (empirical line calibration), cloud masking, spectral indices, land surface temperature.</p></div>
+        <div class="skill"><h3>Machine learning</h3><p>scikit-learn random forests and gradient boosting, spatial cross-validation, accuracy assessment and area estimation, embeddings for similarity search.</p></div>
+        <div class="skill"><h3>Spatial statistics</h3><p>Getis-Ord Gi*, Moran's I and LISA, spatial regression, BACI designs, space-time hot spot analysis, permutation tests.</p></div>
+        <div class="skill"><h3>GeoAI and agents</h3><p>Model Context Protocol servers, tool-using agents with local models (Ollama), retrieval with citations, verification steps that recompute answers.</p></div>
+        <div class="skill"><h3>Programming</h3><p>Python (ArcPy, GeoPandas, rasterio, xarray, GDAL, PySAL), SQL, R, IDL, JavaScript, HTML/CSS, Git and GitHub, STAC APIs.</p></div>
+        <div class="skill"><h3>Data engineering</h3><p>STAC catalogs and APIs, Cloud-Optimized GeoTIFFs, GeoParquet and GeoPackage, DuckDB, ISO 19115 metadata, reproducible environments.</p></div>
+        <div class="skill"><h3>Teaching and communication</h3><p>Lab instruction for 62 students, slide decks and handouts, StoryMaps, conference presentations and posters.</p></div>
+        <div class="skill"><h3>Field and UAV</h3><p>Hyperspectral sensor operation on UAVs, mission planning (flight lines, overlap, altitude), GPS navigation, reference-panel and launch-point surveys.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <h2>Certifications and training</h2>
+      <p class="section-sub">What I have earned, what I am working on now, and what comes next. Certificates of completion are listed as such; none of these is a professional license unless it says so.</p>
+
+      <div class="cert-group">
+        <h3>Earned</h3>
+        <ul class="certs">
+          <li class="cert"><b>Classifying Objects Using Deep Learning in ArcGIS Pro <span class="badge done">certificate</span></b><span class="who">Esri Training</span><span class="when">Nov 2025</span></li>
+          <li class="cert"><b>Introduction to Image Classification <span class="badge done">certificate</span></b><span class="who">Esri Training</span><span class="when">Oct 2025</span></li>
+          <li class="cert"><b>Displaying Raster Data in ArcGIS <span class="badge done">certificate</span></b><span class="who">Esri Training</span><span class="when">Oct 2025</span></li>
+          <li class="cert"><b>Responsible Conduct of Research <span class="badge done">completed</span></b><span class="who">CITI Program, Texas A&amp;M University</span><span class="when">2026</span></li>
+        </ul>
+      </div>
+
+      <div class="cert-group">
+        <h3>In progress</h3>
+        <ul class="certs">
+          <li class="cert"><b>FAA Part 107 Remote Pilot Certificate <span class="badge prog">test scheduled</span></b><span class="who">Federal Aviation Administration · small unmanned aircraft</span><span class="when">Fall 2026</span></li>
+          <li class="cert"><b>Spatial Data Science MOOC <span class="badge prog">in progress</span></b><span class="who">Esri</span><span class="when">Fall 2026</span></li>
+          <li class="cert"><b>GRAD Aggies Foundations Certificate <span class="badge prog">in progress</span></b><span class="who">Texas A&amp;M Graduate and Professional School · six professional development sessions</span><span class="when">Fall 2026</span></li>
+        </ul>
+      </div>
+
+      <div class="cert-group">
+        <h3>Next</h3>
+        <ul class="certs">
+          <li class="cert"><b>ARSET Fundamentals of Remote Sensing <span class="badge plan">planned</span></b><span class="who">NASA Applied Remote Sensing Training · certificate of completion</span><span class="when">Nov 2026</span></li>
+          <li class="cert"><b>ARSET Hyperspectral Data for Land and Coastal Systems <span class="badge plan">planned</span></b><span class="who">NASA Applied Remote Sensing Training · certificate of completion</span><span class="when">Dec 2026</span></li>
+          <li class="cert"><b>Introduction to Model Context Protocol <span class="badge plan">planned</span></b><span class="who">Anthropic Academy · certificate of completion</span><span class="when">Winter 2026</span></li>
+          <li class="cert"><b>MCP Course <span class="badge plan">planned</span></b><span class="who">Hugging Face · fundamentals certificate</span><span class="when">Winter 2026</span></li>
+          <li class="cert"><b>NASA Open Science 101 <span class="badge plan">planned</span></b><span class="who">NASA Transform to Open Science · badge and certificate</span><span class="when">Spring 2027</span></li>
+        </ul>
+      </div>
+
+      <div class="cert-group">
+        <h3>Conferences and workshops</h3>
+        <ul class="certs">
+          <li class="cert"><b>Esri User Conference, San Diego</b><span class="who">Imagery and Remote Sensing SIG; metadata and CAD training; Gaussian-splat digital twins; department volunteer</span><span class="when">Jul 2026</span></li>
+          <li class="cert"><b>Esri Energy conference, Houston</b><span class="who">GeoAI applications in the energy industry</span><span class="when">May 2026</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="tl"><div class="when">Aug 2026 – now</div><div><h3>Graduate Researcher, hyperspectral remote sensing</h3><p>Department of Geography, Texas A&amp;M. Calibrating drone hyperspectral imagery to surface reflectance; preparing random-forest models for tree-species separation.</p></div></div>
+        <div class="tl"><div class="when">Aug 2026 – now</div><div><h3>Graduate Teaching Assistant, Geodatabases (GEOG 391/659)</h3><p>Three lab sections, 62 students: geodatabase design, ER modeling, normalization, SQL Server, spatial SQL and ArcGIS Pro.</p></div></div>
+        <div class="tl"><div class="when">Fall 2026</div><div><h3>Team Lead, Pipelines from Space</h3><p>Eight-person statewide study of vegetation along Texas pipelines with Sentinel-2, Landsat, NAIP and NLCD.</p></div></div>
+        <div class="tl"><div class="when">May – Jun 2026</div><div><h3>Field Assistant, hyperspectral sensor operator</h3><p>Planned UAV hyperspectral missions, scripted sensor acquisition programs, operated the sensor and served as visual observer in tropical forest.</p></div></div>
+        <div class="tl"><div class="when">Aug – Dec 2025</div><div><h3>Undergraduate Research Team Leader</h3><p>Five-person study of pipelines, vegetation and soil moisture in Texas with Google Earth Engine and ArcGIS Pro; presented at Texas A&amp;M GIS Week.</p></div></div>
+        <div class="tl"><div class="when">Mar 2024 – Aug 2026</div><div><h3>Student Technician I, TEEX</h3><p>Maintained liquid, gas and water pipelines (0.25–12 in), facility inspections under safety protocols, field data collection.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="section-sub">Open to GIS and remote sensing internships for summer 2027.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:landon2199@tamu.edu">landon2199@tamu.edu</a>
+        <a class="btn" href="https://www.linkedin.com/in/landonmelesky/">LinkedIn</a>
+        <a class="btn" href="https://orcid.org/0009-0001-8854-1789">ORCID</a>
+        <a class="btn" href="https://community.esri.com/t5/user/viewprofilepage/user-id/946075">Esri Community</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 Landon Melesky · Built with plain HTML and CSS, hosted on GitHub Pages.</span>
+    <button class="theme-toggle" type="button" id="theme">Toggle theme</button>
+  </div>
+</footer>
+<script>
+  // Theme toggle: remembers the choice per browser; the page works without it.
+  (function () {
+    var root = document.documentElement, key = 'theme';
+    try { var saved = localStorage.getItem(key); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+    document.getElementById('theme').addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme') === 'dark' ||
+        (!root.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+      var next = dark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem(key, next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
