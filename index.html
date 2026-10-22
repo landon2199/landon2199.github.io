@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Landon Melesky · GIS Portfolio</title>
+  <meta name="description" content="GIS, remote sensing, spatial statistics and GeoAI projects by Landon Melesky, M.S. Geography student at Texas A&M University. Every project runs from public data and reports its own accuracy.">
+  <meta property="og:title" content="Landon Melesky · GIS Portfolio">
+  <meta property="og:description" content="ArcGIS Pro and ArcPy, remote sensing, spatial statistics and GeoAI projects, each with its accuracy stated.">
+  <meta property="og:image" content="https://landon2199.github.io/assets/img/siteselect-hero.png">
+  <meta property="og:url" content="https://landon2199.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">Landon Melesky<span>GIS · remote sensing</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#methods">Methods</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Training</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="collar"><b>30.62° N, 96.33° W</b><span>Bryan–College Station, Texas</span><span>M.S. Geography, Texas A&amp;M</span></p>
+        <h1>Maps people can act on, with the accuracy stated.</h1>
+        <p class="lead">I'm Landon Melesky, an M.S. Geography student and teaching assistant at Texas A&amp;M and an FAA Part 107 certified drone pilot. I work with Sentinel-1 radar, Sentinel-2 and lidar in Python on Microsoft Planetary Computer, and in ArcGIS Pro, ArcPy and Google Earth Engine. Every project here runs from public data and reports how far its answer can be trusted, not just its maps.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">See the projects</a>
+          <a class="btn" href="https://www.linkedin.com/in/landonmelesky/">LinkedIn</a>
+          <a class="btn" href="https://github.com/landon2199">GitHub</a>
+        </div>
+        <ul class="facts" aria-label="At a glance">
+          <li><b>14</b><span>open-source projects</span></li>
+          <li><b>5</b><span>interactive web maps</span></li>
+          <li><b>80</b><span>students in four GIS lab sections</span></li>
+          <li><b>Part 107</b><span>FAA remote pilot certificate</span></li>
+        </ul>
+      </div>
+      <figure class="sheet">
+        <a href="https://github.com/landon2199/sentinel1-rice-mapping"><img src="assets/img/rice-hero.webp" width="1200" height="675" fetchpriority="high" alt="Rice, corn and other land in Wharton County, Texas, mapped from a Sentinel-1 radar time series, next to the USDA Cropland Data Layer."><span>Wharton County · rice vs corn from Sentinel-1</span></a>
+        <a href="https://github.com/landon2199/texas-brush-species-mapping"><img src="assets/img/brush-hero.webp" width="1200" height="675" alt="Ashe juniper and other land cover in the Texas Hill Country mapped from Sentinel-1, Sentinel-2 and lidar, next to the reference map."><span>Hill Country · Ashe juniper</span></a>
+        <a href="https://github.com/landon2199/sentinel2-landcover-ml"><img src="assets/img/landcover-hero.webp" width="1200" height="675" alt="Sentinel-2 land-cover classification of Bryan–College Station, Texas, next to ESA WorldCover."><span>Brazos Valley · land cover</span></a>
+        <figcaption>Three satellite remote sensing projects from below. Each opens its code and write-up.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Projects</p>
+        <h2>Fourteen projects, each with its accuracy stated</h2>
+        <p>Each one runs end to end from public data, says what it covers and what it leaves out, and reports a result you can check. Code and write-ups are on GitHub.</p>
+      </div>
+
+      <fieldset class="filters">
+        <legend>Show</legend>
+        <label class="chip"><input type="radio" name="f" id="f-all" checked>All <small>14</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-esri">ArcGIS and Esri <small>3</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-hou">Houston area <small>3</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-rs">Remote sensing <small>8</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-geoai">GeoAI <small>4</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-stats">Spatial statistics <small>3</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-net">Networks and SQL <small>2</small></label>
+      </fieldset>
+
+      <div class="grid">
+        <article class="card" data-t="rs">
+          <img loading="lazy" src="assets/img/rice-hero.webp" width="1200" height="675" alt="Sentinel-1 radar map of rice and corn around El Campo, Texas, in 2021, next to the USDA Cropland Data Layer.">
+          <h3>Rice vs corn from Sentinel-1 radar</h3>
+          <div>
+            <ul class="tags"><li>Sentinel-1 SAR</li><li>Sentinel-2</li><li>time series</li><li>accuracy assessment</li></ul>
+            <p>A random forest maps rice, corn and other land around El Campo, Texas, in 2021 from 50 Sentinel-1 radar dates. The same model is trained on radar alone, optical alone and both, on the same samples, and tested on held-out 2 km blocks with area estimates and 95% intervals.</p>
+            <p class="result">Optical beat radar in a fairly clear year (balanced accuracy 0.83 vs 0.79). With April to July of optical data removed, optical fell to 0.775, below radar's 0.788, while the combined model held above 0.80. Estimated rice area: 22.2 ± 2.0 km², against 21.9 km² in the Cropland Data Layer.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/sentinel1-rice-mapping">Code and README →</a></footer>
+        </article>
+
+        <article class="card" data-t="rs">
+          <img loading="lazy" src="assets/img/brush-hero.webp" width="1200" height="675" alt="Random forest map of Ashe juniper, grassland, other woody plants and cropland in the Texas Hill Country, next to the TPWD Ecological Mapping Systems labels.">
+          <h3>What can a 10 m pixel see? Texas brush species</h3>
+          <div>
+            <ul class="tags"><li>Sentinel-2</li><li>Sentinel-1</li><li>lidar</li><li>species mapping</li></ul>
+            <p>Ashe juniper in the Hill Country and honey mesquite in the Rolling Plains, mapped from monthly Sentinel-2 and Sentinel-1 composites plus lidar canopy height, labeled from the TPWD Ecological Mapping Systems map and tested on held-out 2 km blocks.</p>
+            <p class="result">Only partly. Ashe juniper reached user's 0.60 and producer's 0.53 accuracy, confused mostly with evergreen live oak. Evergreen woody cover reached 0.78 and 0.81 where its neighbours go dormant in winter, but deciduous mesquite only 0.46 and 0.38. Radar added at most 0.006 of balanced accuracy.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/texas-brush-species-mapping">Code and README →</a></footer>
+        </article>
+
+        <article class="card" data-t="rs">
+          <img loading="lazy" src="assets/img/landcover-hero.webp" width="1200" height="675" alt="Sentinel-2 land-cover classification of Bryan–College Station, Texas, next to ESA WorldCover.">
+          <h3>Land cover with tested accuracy</h3>
+          <div>
+            <ul class="tags"><li>scikit-learn</li><li>Sentinel-2</li><li>STAC</li><li>accuracy assessment</li></ul>
+            <p>Random-forest land-cover classification of Bryan–College Station from Sentinel-2, showing how random cross-validation overstates accuracy compared with spatial block validation, with area estimates and 95% intervals (Olofsson et al. 2014).</p>
+            <p class="result">Held-out agreement with ESA WorldCover: 0.81 ± 0.015 (area-weighted, 95% CI). With polygon-like training patches, random cross-validation scored 0.89 balanced accuracy but held-out blocks only 0.83; all six area estimates' 95% intervals contained the reference area.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/sentinel2-landcover-ml">Code and README →</a></footer>
+        </article>
+
+        <article class="card" data-t="geoai rs">
+          <img loading="lazy" src="assets/img/sam-hero.webp" width="1200" height="675" alt="Segment Anything applied to NAIP aerial imagery: extracted building and field outlines compared with reference footprints.">
+          <h3>Segment Anything on aerial imagery</h3>
+          <div>
+            <ul class="tags"><li>Segment Anything</li><li>NAIP</li><li>PyTorch</li><li>feature extraction</li></ul>
+            <p>Extracting buildings and fields from 0.6 m NAIP imagery with Meta's Segment Anything Model, then scoring the outlines against reference building footprints at the object level (IoU ≥ 0.5) against a simple baseline.</p>
+            <p class="result">On a held-out area, text-prompted SAM (Grounding DINO + SAM) reached building F1 0.69 (95% CI 0.62–0.74) against Microsoft footprints, vs 0.50 (0.42–0.57) for an NDVI/brightness baseline; it was precise (0.85) but missed about 40% of buildings.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/geoai-sam-naip">Code and README →</a></footer>
+        </article>
+
+        <article class="card" data-t="geoai rs">
+          <img loading="lazy" src="assets/img/mcp-hero.webp" width="1200" height="675" alt="Open Earth MCP: tools an AI assistant can call for imagery, NDVI, land cover and elevation.">
+          <h3>Open Earth MCP server</h3>
+          <div>
+            <ul class="tags"><li>MCP</li><li>GeoAI</li><li>Python</li><li>Planetary Computer</li></ul>
+            <p>A Model Context Protocol server that lets Claude or any MCP client look up open Earth-observation data (Sentinel-2 NDVI time series, land cover, elevation) and returns the source scenes and dates with every answer, plus a verify check.</p>
+            <p class="result">Six tools, one resource and one prompt, with offline tests and a live test. Its verify tool recomputes NDVI from the raw bands by a second code path: 0.1685 vs 0.1683 on a Brazos River cropland field whose 2026 season it traced from 0.18 in March to a 0.91 peak in June.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/open-earth-mcp">Code and README →</a><a href="https://glama.ai/mcp/servers/landon2199/open-earth-mcp">Glama listing →</a></footer>
+        </article>
+
+        <article class="card" data-t="esri geoai hou">
+          <img class="fit" loading="lazy" src="assets/img/siteselect-hero.webp" width="1200" height="432" alt="Harris County H3 hexes scored for a new independent coffee shop by an expert overlay and by Esri geodemographic embeddings, with where the two methods agree.">
+          <h3>Agentic site selection: where to open a coffee shop</h3>
+          <div>
+            <ul class="tags"><li>AI agents</li><li>MCP</li><li>ArcGIS Pro GeoAI</li><li>embeddings</li></ul>
+            <p>A manager agent and five subagents answer plain-English site questions for Harris County through a local MCP server, comparing an expert-weighted overlay with Esri's USA Geodemographic Embeddings (Find Similar Features Using Embeddings), and testing both on shops hidden from them.</p>
+            <p class="result">On spatially blocked hold-outs the embeddings reached AUC 0.74 and the overlay 0.71 (random 0.50), but the two methods' top 10% of hexes barely overlap (Jaccard 0.02), and in the urban core the embeddings fell to near random. A numpy re-implementation reproduces Esri's tool exactly (Spearman 1.000).</p>
+          </div>
+          <footer><a href="https://landon2199.github.io/agentic-site-selection/">Interactive map →</a><a href="https://github.com/landon2199/agentic-site-selection">Code →</a></footer>
+        </article>
+
+        <article class="card" data-t="geoai rs">
+          <img loading="lazy" src="assets/img/embed-hero.webp" width="1200" height="675" alt="Query-by-example search: one Sentinel-2 image chip and the most similar chips found with a self-supervised foundation model.">
+          <h3>Find places that look alike</h3>
+          <div>
+            <ul class="tags"><li>PyTorch</li><li>TorchGeo</li><li>foundation model</li><li>GPU</li></ul>
+            <p>Query-by-example search over Sentinel-2 imagery with a self-supervised foundation model (SSL4EO-S12): pick one place and retrieve the places that look most like it, then measure how often the matches share its land cover against a spectral baseline.</p>
+            <p class="result">Over 7,974 chips of the Brazos Valley, the foundation model and a simple spectral baseline scored about the same on coarse land-cover classes (class-balanced precision@10 0.845 vs 0.835); the model's edge was on rare classes such as water (0.87 vs 0.78).</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/geoai-embedding-search">Code and README →</a></footer>
+        </article>
+
+        <article class="card" data-t="esri rs">
+          <img loading="lazy" src="assets/img/toolbox-hero.webp" width="1200" height="675" alt="Accuracy Assessment Toolbox for ArcGIS Pro: area estimates with 95% confidence intervals compared with pixel counting.">
+          <h3>Accuracy Assessment Toolbox for ArcGIS Pro</h3>
+          <div>
+            <ul class="tags"><li>ArcGIS Pro</li><li>ArcPy</li><li>Python toolbox</li><li>standards</li></ul>
+            <p>A Python toolbox that adds what Compute Confusion Matrix leaves out: sample size set from a target precision, area-adjusted accuracy with 95% confidence intervals (Olofsson et al. 2014, with an optional Wilson interval), and buffered spatial blocks for train/test splits. Tested inside ArcGIS Pro 3.7.</p>
+            <p class="result">Reproduces the class areas in Olofsson et al.'s worked example to the hectare. In a synthetic demo, pixel counting overstated cropland by 39%; over 1,000 repeat samples the 95% intervals covered the true area 95% of the time for four of five classes, and the report flags the one that fell short.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/arcgis-accuracy-toolbox">Code and README →</a></footer>
+        </article>
+
+        <article class="card" data-t="esri stats">
+          <img class="fit" loading="lazy" src="assets/img/sds-hero.webp" width="1200" height="384" alt="Two maps of SNAP participation hot spots across U.S. counties: Gi* with a 146 km fixed distance band marks broad regions, Gi* with polygon contiguity marks much tighter clusters.">
+          <h3>Esri Spatial Data Science MOOC, rebuilt in ArcPy</h3>
+          <div>
+            <ul class="tags"><li>ArcPy</li><li>spatial statistics</li><li>forest-based regression</li><li>space-time cubes</li></ul>
+            <p>Four sections of Esri's 2026 MOOC (data engineering, prediction, suitability, and hot spot and space-time pattern mining) redone as reproducible ArcPy scripts on the course data, with seeded runs, every tool message kept, and the checks the course leaves out.</p>
+            <p class="result">The course's random 10% hold-out gives the turnout model a validation R² of 0.76; holding out whole states drops it to 0.58, and to −0.48 for Iowa, the state it is then used on. Switching Gi* from the default 146 km distance band to polygon contiguity cuts significant SNAP hot and cold spot counties from 1,912 to 759 of 3,105.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/esri-spatial-data-science">Code →</a></footer>
+        </article>
+
+        <article class="card" data-t="rs stats hou">
+          <img loading="lazy" src="assets/img/heat-hero.webp" width="1200" height="675" alt="Houston urban heat: Getis-Ord Gi* hot and cold spots of land surface temperature by census tract.">
+          <h3>Houston heat hot spots</h3>
+          <div>
+            <ul class="tags"><li>PySAL</li><li>Landsat LST</li><li>spatial regression</li><li>Census</li></ul>
+            <p>Where is Harris County hottest in summer, and how much does vegetation explain? Landsat land surface temperature by census tract, Getis-Ord Gi* and LISA clusters, and a spatial regression that accounts for neighbors.</p>
+            <p class="result">Summer surface temperature is strongly clustered across 1,111 tracts (Moran's I 0.62). After accounting for neighbors, each +0.1 in tract NDVI is associated with about 1.9 °C lower surface temperature (an association, not a causal effect); 147 tracts are significant hot spots after false-discovery correction.</p>
+          </div>
+          <footer><a href="https://landon2199.github.io/houston-heat-hotspots/map.html">Interactive map →</a><a href="https://github.com/landon2199/houston-heat-hotspots">Code →</a></footer>
+        </article>
+
+        <article class="card" data-t="net hou">
+          <img loading="lazy" src="assets/img/flood-hero.webp" width="1200" height="675" alt="Texas Gulf Coast: critical facilities inside FEMA flood hazard zones in Harris, Galveston, Brazoria and Fort Bend counties.">
+          <h3>Critical facilities in Texas flood zones</h3>
+          <div>
+            <ul class="tags"><li>spatial SQL</li><li>DuckDB</li><li>FEMA NFHL</li><li>data engineering</li></ul>
+            <p>A spatial-SQL pipeline (DuckDB, with PostGIS and SQL Server equivalents) that loads FEMA flood hazard maps and hospitals, nursing homes, schools and fire/EMS stations for five Gulf Coast counties, cleans them, and screens which sit in or near mapped flood zones, cross-checked against GeoPandas on every run.</p>
+            <p class="result">250 of 2,860 facilities (8.7%) sit in FEMA's 1%-annual-chance flood zone, including 13 hospitals with 2,367 beds and 132 schools with about 90,000 students; Galveston County has the highest share (20%). Every count and distance matches an independent GeoPandas recomputation.</p>
+          </div>
+          <footer><a href="https://landon2199.github.io/texas-flood-exposure-sql/map.html">Interactive map →</a><a href="https://github.com/landon2199/texas-flood-exposure-sql">Code →</a></footer>
+        </article>
+
+        <article class="card" data-t="net">
+          <img loading="lazy" src="assets/img/fire-hero.webp" width="1200" height="675" alt="Brazos County, Texas: road drive time from the nearest fire station, with two proposed station sites from a maximal covering location model.">
+          <h3>How fast can a fire engine reach you?</h3>
+          <div>
+            <ul class="tags"><li>network analysis</li><li>OSMnx</li><li>location-allocation</li><li>optimization</li></ul>
+            <p>Drive-time service areas from every fire station in Brazos County, Texas, over the OpenStreetMap road network and 2020 Census blocks, then a maximal covering location model (the open-source counterpart of Network Analyst's location-allocation) that picks where one or two new stations would cover the most residents.</p>
+            <p class="result">82.3% of residents are within a 4-minute drive of one of 25 stations and 96.5% within 8. OpenStreetMap listed only 16 stations; adding the 9 missing ones from official department lists changed the answer, since the OSM-only "best new sites" landed about 200 m from real stations. Solver results match an exhaustive search.</p>
+          </div>
+          <footer><a href="https://landon2199.github.io/brazos-fire-access/map.html">Interactive map →</a><a href="https://github.com/landon2199/brazos-fire-access">Code →</a></footer>
+        </article>
+
+        <article class="card" data-t="stats">
+          <img loading="lazy" src="assets/img/covid-hero.webp" width="1200" height="675" alt="COVID-19 in Texas: map of how many months each county was a significant space-time hot spot, March 2020 to February 2023, beside the statewide weekly case curve.">
+          <h3>COVID-19 in Texas: where hot spots emerged</h3>
+          <div>
+            <ul class="tags"><li>space-time analysis</li><li>PySAL</li><li>web map</li><li>public health</li></ul>
+            <p>Weekly case and death rates for all 254 Texas counties, March 2020 to February 2023, smoothed for small populations (Empirical Bayes), with Getis-Ord Gi* by wave, a space-time hot spot analysis with Mann-Kendall trends, and an interactive map with a monthly time slider.</p>
+            <p class="result">174 of 253 analyzed counties were a significant hot spot in at least one month, peaking at 76 in December 2020; in the Omicron waves hot spots returned to South Texas. One county whose reported cases exceeded its population (likely non-resident workers) is excluded, with a sensitivity run that keeps it. Nonmetro counties had a higher death rate than metro counties in every wave (538 vs 294 per 100,000 overall, not age-adjusted).</p>
+          </div>
+          <footer><a href="https://landon2199.github.io/texas-covid-spacetime/">Interactive map →</a><a href="https://github.com/landon2199/texas-covid-spacetime">Code →</a></footer>
+        </article>
+
+        <article class="card" data-t="web">
+          <img class="fit" loading="lazy" src="assets/img/daylight.svg" width="460" height="300" alt="Card: sunset and civil dusk in College Station, Texas, across the academic year.">
+          <h3>Daylight in College Station</h3>
+          <div>
+            <ul class="tags"><li>JavaScript</li><li>NOAA solar equations</li><li>teaching</li></ul>
+            <p>When does it get dark across the academic year? One self-contained page solves the sun's position in the browser with the NOAA solar-position equations, checked against U.S. Naval Observatory tables (within about 20 s).</p>
+          </div>
+          <footer><a href="https://landon2199.github.io/college-station-daylight/">Live page →</a><a href="https://github.com/landon2199/college-station-daylight">Code →</a></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="methods">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Methods</p>
+        <h2>How I check my work</h2>
+        <p>A map can look right and still be wrong. These are the checks I run before I report a number.</p>
+      </div>
+
+      <div class="methods">
+        <div class="panel">
+          <h3>Why a random check flatters a model</h3>
+          <p>Nearby pixels look alike. When test pixels sit next to training pixels, the model is partly graded on ground it has already seen. Holding out a whole block, with a buffer around it, tests the model on new ground.</p>
+          <figure class="split">
+            <div>
+              <svg viewBox="0 0 140 140" role="img" aria-label="A 6 by 6 grid where 8 test cells are scattered among training cells."><rect class="cell-train" x="0" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="0" width="20" height="20" rx="3"/><rect class="cell-test" x="48" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="72" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="96" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="120" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="48" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="72" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="96" y="24" width="20" height="20" rx="3"/><rect class="cell-test" x="120" y="24" width="20" height="20" rx="3"/><rect class="cell-test" x="0" y="48" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="48" width="20" height="20" rx="3"/><rect class="cell-train" x="48" y="48" width="20" height="20" rx="3"/><rect class="cell-test" x="72" y="48" width="20" height="20" rx="3"/><rect class="cell-train" x="96" y="48" width="20" height="20" rx="3"/><rect class="cell-train" x="120" y="48" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="72" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="72" width="20" height="20" rx="3"/><rect class="cell-train" x="48" y="72" width="20" height="20" rx="3"/><rect class="cell-train" x="72" y="72" width="20" height="20" rx="3"/><rect class="cell-test" x="96" y="72" width="20" height="20" rx="3"/><rect class="cell-train" x="120" y="72" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="96" width="20" height="20" rx="3"/><rect class="cell-test" x="24" y="96" width="20" height="20" rx="3"/><rect class="cell-train" x="48" y="96" width="20" height="20" rx="3"/><rect class="cell-train" x="72" y="96" width="20" height="20" rx="3"/><rect class="cell-train" x="96" y="96" width="20" height="20" rx="3"/><rect class="cell-train" x="120" y="96" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="120" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="120" width="20" height="20" rx="3"/><rect class="cell-train" x="48" y="120" width="20" height="20" rx="3"/><rect class="cell-test" x="72" y="120" width="20" height="20" rx="3"/><rect class="cell-train" x="96" y="120" width="20" height="20" rx="3"/><rect class="cell-test" x="120" y="120" width="20" height="20" rx="3"/></svg>
+              <b>Random split</b>
+              <span>Test cells sit beside training cells</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 140 140" role="img" aria-label="A 6 by 6 grid where a 3 by 3 test block sits in one corner, separated from the training cells by a ring of buffer cells."><rect class="cell-train" x="0" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="48" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="72" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="96" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="120" y="0" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="48" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="72" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="96" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="120" y="24" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="48" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="48" width="20" height="20" rx="3"/><rect class="cell-buffer" x="48.5" y="48.5" width="19" height="19" rx="3"/><rect class="cell-buffer" x="72.5" y="48.5" width="19" height="19" rx="3"/><rect class="cell-buffer" x="96.5" y="48.5" width="19" height="19" rx="3"/><rect class="cell-buffer" x="120.5" y="48.5" width="19" height="19" rx="3"/><rect class="cell-train" x="0" y="72" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="72" width="20" height="20" rx="3"/><rect class="cell-buffer" x="48.5" y="72.5" width="19" height="19" rx="3"/><rect class="cell-test" x="72" y="72" width="20" height="20" rx="3"/><rect class="cell-test" x="96" y="72" width="20" height="20" rx="3"/><rect class="cell-test" x="120" y="72" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="96" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="96" width="20" height="20" rx="3"/><rect class="cell-buffer" x="48.5" y="96.5" width="19" height="19" rx="3"/><rect class="cell-test" x="72" y="96" width="20" height="20" rx="3"/><rect class="cell-test" x="96" y="96" width="20" height="20" rx="3"/><rect class="cell-test" x="120" y="96" width="20" height="20" rx="3"/><rect class="cell-train" x="0" y="120" width="20" height="20" rx="3"/><rect class="cell-train" x="24" y="120" width="20" height="20" rx="3"/><rect class="cell-buffer" x="48.5" y="120.5" width="19" height="19" rx="3"/><rect class="cell-test" x="72" y="120" width="20" height="20" rx="3"/><rect class="cell-test" x="96" y="120" width="20" height="20" rx="3"/><rect class="cell-test" x="120" y="120" width="20" height="20" rx="3"/></svg>
+              <b>Spatial block split</b>
+              <span>The test block is kept apart by a buffer</span>
+            </div>
+            <figcaption>
+              <ul class="legend">
+                <li><i class="k-train"></i>Training</li>
+                <li><i class="k-test"></i>Test</li>
+                <li><i class="k-buffer"></i>Buffer, left out</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="panel">
+          <h3>What the spatial check changed in two projects</h3>
+          <p>The same model, scored two ways.</p>
+          <figure class="dumbbell">
+            <ul class="legend">
+              <li><i class="k-a"></i>Random check</li>
+              <li><i class="k-b"></i>Spatial check</li>
+            </ul>
+            <div class="db-row">
+              <h4>Land cover from Sentinel-2<small>Balanced accuracy: random cross-validation vs held-out blocks</small></h4>
+              <div class="track" aria-hidden="true">
+                <span class="bar" style="left:66%;width:12%"></span>
+                <span class="dot b" style="left:66%" title="Spatial check: 0.83"></span>
+                <span class="val left" style="left:66%">0.83</span>
+                <span class="dot a" style="left:78%" title="Random check: 0.89"></span>
+                <span class="val right" style="left:78%">0.89</span>
+              </div>
+            </div>
+            <div class="db-row">
+              <h4>Voter turnout model, Esri Spatial Data Science MOOC<small>Validation R²: random 10% hold-out vs whole states held out</small></h4>
+              <div class="track" aria-hidden="true">
+                <span class="bar" style="left:16%;width:36%"></span>
+                <span class="dot b" style="left:16%" title="Spatial check: 0.58"></span>
+                <span class="val left" style="left:16%">0.58</span>
+                <span class="dot a" style="left:52%" title="Random check: 0.76"></span>
+                <span class="val right" style="left:52%">0.76</span>
+              </div>
+            </div>
+            <div class="axis" aria-hidden="true"><span style="left:0%">0.5</span><span style="left:20%">0.6</span><span style="left:40%">0.7</span><span style="left:60%">0.8</span><span style="left:80%">0.9</span><span style="left:100%">1.0</span></div>
+            <p class="axis-label" aria-hidden="true">Score, where 1.0 is perfect</p>
+            <div class="sr-only"><table>
+              <caption>Scores under a random check and a spatial check</caption>
+              <tr><th scope="col">Model</th><th scope="col">Random check</th><th scope="col">Spatial check</th></tr>
+              <tr><th scope="row">Land cover from Sentinel-2, balanced accuracy</th><td>0.89</td><td>0.83</td></tr>
+              <tr><th scope="row">Voter turnout model, validation R²</th><td>0.76</td><td>0.58</td></tr>
+            </table></div>
+            <figcaption>Both models scored lower once whole places were held out. The lower number is the one to plan with.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <ul class="habits">
+        <li>
+          <h3>Hold out whole places</h3>
+          <p>Spatial blocks and whole-state hold-outs, as above. In the Esri MOOC rebuild the turnout model fell to an R² of −0.48 for Iowa, the state it is then used on.</p>
+        </li>
+        <li>
+          <h3>Compute it a second way</h3>
+          <p>The MCP server recomputes NDVI from the raw bands (0.1685 vs 0.1683). The flood screen matches an independent GeoPandas run, and a numpy rebuild reproduces Esri's embedding tool exactly.</p>
+        </li>
+        <li>
+          <h3>State the interval and the gaps</h3>
+          <p>Areas and scores come with 95% intervals. Write-ups say what was missing, like the 9 fire stations OpenStreetMap did not list, and call an association an association.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Research</p>
+        <h2>Drone hyperspectral imaging of tropical forest</h2>
+      </div>
+      <div class="research">
+        <p>My M.S. research is part of a funded project led by my advisor, Dr. Leila Character, using drone hyperspectral imaging and machine learning to study tropical forest vegetation. Details stay private until the work is published.</p>
+        <div class="panel">
+          <p><b>In the field.</b> Mission planner and hyperspectral sensor operator on UAV flights in tropical forest, May to June 2026. FAA Part 107 remote pilot certificate since October 2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Experience</p>
+        <h2>Research, teaching and field work</h2>
+      </div>
+      <ol class="timeline">
+        <li class="tl"><div class="when">Aug 2026 – now</div><div><h3>Graduate Researcher, hyperspectral remote sensing</h3><p>Department of Geography, Texas A&amp;M. Drone hyperspectral imaging and machine learning for a funded tropical forest vegetation project.</p></div></li>
+        <li class="tl"><div class="when">Aug 2026 – now</div><div><h3>Graduate Teaching Assistant, GIS labs</h3><p>Four lab sections, 80 students: geodatabase design, ER modeling, normalization, SQL Server, spatial SQL and ArcGIS Pro, plus principles of GIS.</p></div></li>
+        <li class="tl"><div class="when">May – Jun 2026</div><div><h3>Mission Planner and Hyperspectral Sensor Operator</h3><p>Planned UAV hyperspectral missions, scripted sensor acquisition programs, operated the sensor and served as visual observer in tropical forest.</p></div></li>
+        <li class="tl"><div class="when">Aug – Dec 2025</div><div><h3>Undergraduate Research Team Leader</h3><p>Team research project: five-person study of pipelines, vegetation and soil moisture in Texas with Google Earth Engine and ArcGIS Pro; presented at Texas A&amp;M GIS Week.</p></div></li>
+        <li class="tl"><div class="when">Mar 2024 – Aug 2026</div><div><h3>Student Technician I, TEEX</h3><p>Maintained liquid, gas and water pipelines (0.25–12 in), facility inspections under safety protocols, field data collection.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Skills</p>
+        <h2>Tools and methods</h2>
+      </div>
+      <div class="skills">
+        <div class="skill"><h3>ArcGIS and GIS</h3><ul class="tags"><li>ArcGIS Pro</li><li>ArcPy</li><li>ArcGIS Online</li><li>StoryMaps</li><li>QGIS</li><li>geodatabase design</li><li>spatial SQL (SQL Server)</li><li>geoprocessing</li><li>cartography</li><li>linear referencing</li></ul></div>
+        <div class="skill"><h3>Remote sensing</h3><ul class="tags"><li>Sentinel-2</li><li>Sentinel-1 radar</li><li>Landsat</li><li>NAIP (0.6 m)</li><li>lidar</li><li>hyperspectral</li><li>Microsoft Planetary Computer</li><li>Google Earth Engine</li><li>ENVI</li><li>cloud masking</li><li>spectral indices</li><li>land surface temperature</li></ul></div>
+        <div class="skill"><h3>Machine learning</h3><ul class="tags"><li>random forests</li><li>gradient boosting</li><li>scikit-learn</li><li>spatial cross-validation</li><li>accuracy assessment</li><li>area estimation</li><li>embeddings for similarity search</li></ul></div>
+        <div class="skill"><h3>Spatial statistics</h3><ul class="tags"><li>Getis-Ord Gi*</li><li>Moran's I and LISA</li><li>spatial regression</li><li>space-time hot spots</li><li>permutation tests</li></ul></div>
+        <div class="skill"><h3>GeoAI and agents</h3><ul class="tags"><li>Model Context Protocol servers</li><li>tool-using agents</li><li>verification steps</li></ul></div>
+        <div class="skill"><h3>Programming</h3><ul class="tags"><li>Python</li><li>GeoPandas</li><li>rasterio</li><li>xarray</li><li>GDAL</li><li>PySAL</li><li>SQL</li><li>R</li><li>IDL</li><li>JavaScript</li><li>HTML/CSS</li><li>Git and GitHub</li></ul></div>
+        <div class="skill"><h3>Data engineering</h3><ul class="tags"><li>STAC catalogs and APIs</li><li>Cloud-Optimized GeoTIFF</li><li>GeoParquet</li><li>GeoPackage</li><li>DuckDB</li><li>ISO 19115 metadata</li><li>reproducible environments</li></ul></div>
+        <div class="skill"><h3>Field and UAV</h3><ul class="tags"><li>FAA Part 107</li><li>hyperspectral sensor operation</li><li>mission planning</li><li>GPS navigation</li><li>reference-panel surveys</li></ul></div>
+        <div class="skill"><h3>Teaching and communication</h3><ul class="tags"><li>lab instruction, 80 students</li><li>slide decks and handouts</li><li>StoryMaps</li><li>Texas A&amp;M GIS Week 2025 talk</li><li>AAG 2027 poster (accepted)</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Training</p>
+        <h2>Certifications and training</h2>
+        <p>Certificates of completion are listed as such. The FAA certificate is the only license.</p>
+      </div>
+      <div class="certs-wrap">
+        <div class="cert-group">
+          <h3>Earned</h3>
+          <ul class="certs">
+            <li class="cert"><b>FAA Part 107 Remote Pilot Certificate <span class="badge done">license</span></b><span class="who">Federal Aviation Administration · small unmanned aircraft systems</span><span class="when">Oct 2026</span></li>
+            <li class="cert"><b>Spatial Data Science: The New Frontier in Analytics (MOOC)</b><span class="who">Esri · certificate of completion</span><span class="when">Oct 2026</span></li>
+            <li class="cert"><b>Classifying Objects Using Deep Learning in ArcGIS Pro</b><span class="who">Esri Training · certificate</span><span class="when">Nov 2025</span></li>
+            <li class="cert"><b>Introduction to Image Classification</b><span class="who">Esri Training · certificate</span><span class="when">Oct 2025</span></li>
+            <li class="cert"><b>Displaying Raster Data in ArcGIS</b><span class="who">Esri Training · certificate</span><span class="when">Oct 2025</span></li>
+            <li class="cert"><b>Responsible Conduct of Research</b><span class="who">CITI Program, Texas A&amp;M University</span><span class="when">2026</span></li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>In progress</h3>
+          <ul class="certs">
+            <li class="cert"><b>GRAD Aggies Foundations Certificate <span class="badge prog">in progress</span></b><span class="who">Texas A&amp;M Graduate and Professional School · six professional development sessions</span><span class="when">Fall 2026</span></li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Conferences</h3>
+          <ul class="certs">
+            <li class="cert"><b>Esri User Conference, San Diego</b><span class="who">Imagery and Remote Sensing SIG; metadata and CAD training; Gaussian-splat digital twins; department volunteer</span><span class="when">Jul 2026</span></li>
+            <li class="cert"><b>Esri Energy Resources GIS Conference, Houston</b><span class="who">GeoAI applications in the energy industry</span><span class="when">May 2026</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="sec-head">
+        <p class="kicker">Contact</p>
+        <h2>Let's talk about GIS and remote sensing work</h2>
+        <p>I'm looking for GIS and remote sensing internships and research roles.</p>
+      </div>
+      <p class="email">landon2199@tamu.edu</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:landon2199@tamu.edu">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/landonmelesky/">LinkedIn</a>
+        <a class="btn" href="https://github.com/landon2199">GitHub</a>
+        <a class="btn" href="https://orcid.org/0009-0001-8854-1789">ORCID</a>
+        <a class="btn" href="https://community.esri.com/t5/user/viewprofilepage/user-id/946075">Esri Community</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>© 2026 Landon Melesky · Built with plain HTML and CSS and an AI coding assistant (Claude Code), hosted on GitHub Pages.</span>
+    <span class="coords">30.6280° N, 96.3344° W</span>
+  </div>
+</footer>
+</body>
+</html>
