@@ -43,7 +43,7 @@
         <div class="stat"><b>3</b><span>GeoAI projects: an MCP server, a foundation model and Segment Anything</span></div>
         <div class="stat"><b>3</b><span>Esri training certificates</span></div>
         <div class="stat"><b>62</b><span>students taught in three geodatabase lab sections</span></div>
-        <div class="stat"><b>8</b><span>open-source projects, each built only from public data</span></div>
+        <div class="stat"><b>10</b><span>open-source projects, each built only from public data</span></div>
       </div>
     </div>
   </section>
@@ -82,7 +82,7 @@
             <div class="tags"><span class="tag">PySAL</span><span class="tag">Landsat LST</span><span class="tag">spatial regression</span><span class="tag">Census</span></div>
             <h3>Houston heat hot spots</h3>
             <p>Where is Harris County hottest in summer, and how much does vegetation explain? Landsat land surface temperature by census tract, Getis-Ord Gi* and LISA clusters, and a spatial regression that accounts for neighbors.</p>
-            <p class="result" data-fill="heat">Summer surface temperature is strongly clustered across 1,111 tracts (Moran's I 0.62). After accounting for neighbors, tracts are about 1.9 °C cooler for every +0.1 NDVI; 147 tracts are significant hot spots after false-discovery correction.</p>
+            <p class="result" data-fill="heat">Summer surface temperature is strongly clustered across 1,111 tracts (Moran's I 0.62). After accounting for neighbors, each +0.1 in tract NDVI is associated with about 1.9 °C lower surface temperature (an association, not a causal effect); 147 tracts are significant hot spots after false-discovery correction.</p>
             <div class="links"><a href="https://landon2199.github.io/houston-heat-hotspots/map.html">Interactive map →</a><a href="https://github.com/landon2199/houston-heat-hotspots">Code →</a></div>
           </div>
         </article>
@@ -104,7 +104,7 @@
             <div class="tags"><span class="tag">PyTorch</span><span class="tag">TorchGeo</span><span class="tag">foundation model</span><span class="tag">GPU</span></div>
             <h3>Find places that look alike</h3>
             <p>Query-by-example search over Sentinel-2 imagery with a self-supervised foundation model (SSL4EO-S12): pick one place and retrieve the places that look most like it, then measure how often the matches share its land cover against a spectral baseline.</p>
-            <p class="result" data-fill="embed">Over 7,974 chips of the Brazos Valley, all 24 top matches for three example queries shared the query's land cover (15 of 24 for a spectral baseline). On coarse classes overall the two scored about the same (precision@10 0.85 vs 0.84); the model's edge was on rare classes such as water (0.87 vs 0.78).</p>
+            <p class="result" data-fill="embed">Over 7,974 chips of the Brazos Valley, the foundation model and a simple spectral baseline scored about the same on coarse land-cover classes (class-balanced precision@10 0.85 vs 0.83); the model's edge was on rare classes such as water (0.87 vs 0.78).</p>
             <div class="links"><a href="https://github.com/landon2199/geoai-embedding-search">Code &amp; README →</a></div>
           </div>
         </article>
@@ -128,6 +128,28 @@
             <p>Extracting buildings and fields from 0.6 m NAIP imagery with Meta's Segment Anything Model, then scoring the outlines against reference building footprints at the object level (IoU ≥ 0.5) against a simple baseline.</p>
             <p class="result" data-fill="sam">On a held-out area, text-prompted SAM (Grounding DINO + SAM) reached building F1 0.69 (95% CI 0.62–0.74) against Microsoft footprints, vs 0.50 (0.42–0.57) for an NDVI/brightness baseline; it was precise (0.85) but missed about 40% of buildings.</p>
             <div class="links"><a href="https://github.com/landon2199/geoai-sam-naip">Code &amp; README →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/fire-hero.png" alt="Brazos County, Texas: road drive time from the nearest fire station, with two proposed station sites from a maximal covering location model."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">network analysis</span><span class="tag">OSMnx</span><span class="tag">location-allocation</span><span class="tag">optimization</span></div>
+            <h3>How fast can a fire engine reach you?</h3>
+            <p>Drive-time service areas from every fire station in Brazos County, Texas, over the OpenStreetMap road network and 2020 Census blocks, then a maximal covering location model (the open-source counterpart of Network Analyst's location-allocation) that picks where one or two new stations would cover the most residents.</p>
+            <p class="result" data-fill="fire">82.3% of residents are within a 4-minute drive of one of 25 stations and 96.5% within 8. OpenStreetMap listed only 16 stations; adding the 9 missing ones from official department lists changed the answer, since the OSM-only "best new sites" landed about 200 m from real stations. Solver results match an exhaustive search.</p>
+            <div class="links"><a href="https://landon2199.github.io/brazos-fire-access/map.html">Interactive map →</a><a href="https://github.com/landon2199/brazos-fire-access">Code →</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img loading="lazy" src="assets/img/flood-hero.png" alt="Texas Gulf Coast: critical facilities inside FEMA flood hazard zones in Harris, Galveston, Brazoria and Fort Bend counties."></div>
+          <div class="body">
+            <div class="tags"><span class="tag">spatial SQL</span><span class="tag">DuckDB</span><span class="tag">FEMA NFHL</span><span class="tag">data engineering</span></div>
+            <h3>Critical facilities in Texas flood zones</h3>
+            <p>A spatial-SQL pipeline (DuckDB, with PostGIS and SQL Server equivalents) that loads FEMA flood hazard maps and hospitals, nursing homes, schools and fire/EMS stations for five Gulf Coast counties, cleans them, and screens which sit in or near mapped flood zones, cross-checked against GeoPandas on every run.</p>
+            <p class="result" data-fill="flood">250 of 2,860 facilities (8.7%) sit in FEMA's 1%-annual-chance flood zone, including 13 hospitals with 2,367 beds and 132 schools with about 90,000 students; Galveston County has the highest share (20%). Every count and distance matches an independent GeoPandas recomputation.</p>
+            <div class="links"><a href="https://landon2199.github.io/texas-flood-exposure-sql/map.html">Interactive map →</a><a href="https://github.com/landon2199/texas-flood-exposure-sql">Code →</a></div>
           </div>
         </article>
 
@@ -162,7 +184,7 @@
         <div class="skill"><h3>GeoAI and agents</h3><p>Model Context Protocol servers, tool-using agents with local models (Ollama), retrieval with citations, verification steps that recompute answers.</p></div>
         <div class="skill"><h3>Programming</h3><p>Python (ArcPy, GeoPandas, rasterio, xarray, GDAL, PySAL), SQL, R, IDL, JavaScript, HTML/CSS, Git and GitHub, STAC APIs.</p></div>
         <div class="skill"><h3>Data engineering</h3><p>STAC catalogs and APIs, Cloud-Optimized GeoTIFFs, GeoParquet and GeoPackage, DuckDB, ISO 19115 metadata, reproducible environments.</p></div>
-        <div class="skill"><h3>Teaching and communication</h3><p>Lab instruction for 62 students, slide decks and handouts, StoryMaps, conference presentations and posters.</p></div>
+        <div class="skill"><h3>Teaching and communication</h3><p>Lab instruction for 62 students, slide decks and handouts, StoryMaps, a conference presentation (Texas A&amp;M GIS Week 2025) and a poster accepted for AAG 2027.</p></div>
         <div class="skill"><h3>Field and UAV</h3><p>Hyperspectral sensor operation on UAVs, mission planning (flight lines, overlap, altitude), GPS navigation, reference-panel and launch-point surveys.</p></div>
       </div>
     </div>
