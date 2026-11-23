@@ -46,16 +46,16 @@
           <a class="btn" href="https://github.com/landon2199">GitHub</a>
         </div>
         <ul class="facts" aria-label="At a glance">
-          <li><b>14</b><span>open-source projects</span></li>
+          <li><b>15</b><span>open-source projects</span></li>
           <li><b>5</b><span>interactive web maps</span></li>
           <li><b>80</b><span>students in four GIS lab sections</span></li>
           <li><b>Part 107</b><span>FAA remote pilot certificate</span></li>
         </ul>
       </div>
       <figure class="sheet">
-        <a href="https://github.com/landon2199/sentinel1-rice-mapping"><img src="assets/img/rice-hero.webp" width="1200" height="675" fetchpriority="high" alt="Rice, corn and other land in Wharton County, Texas, mapped from a Sentinel-1 radar time series, next to the USDA Cropland Data Layer."><span>Wharton County · rice vs corn from Sentinel-1</span></a>
+        <a href="https://github.com/landon2199/dryland-shrub-crowns"><img src="assets/img/shrubs-hero.webp" width="1200" height="675" fetchpriority="high" alt="Desert shrub crowns on 0.6 m NAIP imagery outlined against lidar crowns, next to the same 100 m in 10 m Sentinel-2 pixels with lidar shrub cover in each pixel."><span>Jornada, New Mexico · desert shrub crowns</span></a>
+        <a href="https://github.com/landon2199/sentinel1-rice-mapping"><img src="assets/img/rice-hero.webp" width="1200" height="675" alt="Rice, corn and other land in Wharton County, Texas, mapped from a Sentinel-1 radar time series, next to the USDA Cropland Data Layer."><span>Wharton County · rice vs corn from Sentinel-1</span></a>
         <a href="https://github.com/landon2199/texas-brush-species-mapping"><img src="assets/img/brush-hero.webp" width="1200" height="675" alt="Ashe juniper and other land cover in the Texas Hill Country mapped from Sentinel-1, Sentinel-2 and lidar, next to the reference map."><span>Hill Country · Ashe juniper</span></a>
-        <a href="https://github.com/landon2199/sentinel2-landcover-ml"><img src="assets/img/landcover-hero.webp" width="1200" height="675" alt="Sentinel-2 land-cover classification of Bryan–College Station, Texas, next to ESA WorldCover."><span>Brazos Valley · land cover</span></a>
         <figcaption>Three satellite remote sensing projects from below. Each opens its code and write-up.</figcaption>
       </figure>
     </div>
@@ -65,22 +65,33 @@
     <div class="wrap">
       <div class="sec-head">
         <p class="kicker">Projects</p>
-        <h2>Fourteen projects, each with its accuracy stated</h2>
+        <h2>Fifteen projects, each with its accuracy stated</h2>
         <p>Each one runs end to end from public data, says what it covers and what it leaves out, and reports a result you can check. Code and write-ups are on GitHub.</p>
       </div>
 
       <fieldset class="filters">
         <legend>Show</legend>
-        <label class="chip"><input type="radio" name="f" id="f-all" checked>All <small>14</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-all" checked>All <small>15</small></label>
         <label class="chip"><input type="radio" name="f" id="f-esri">ArcGIS and Esri <small>3</small></label>
         <label class="chip"><input type="radio" name="f" id="f-hou">Houston area <small>3</small></label>
-        <label class="chip"><input type="radio" name="f" id="f-rs">Remote sensing <small>8</small></label>
-        <label class="chip"><input type="radio" name="f" id="f-geoai">GeoAI <small>4</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-rs">Remote sensing <small>9</small></label>
+        <label class="chip"><input type="radio" name="f" id="f-geoai">GeoAI <small>5</small></label>
         <label class="chip"><input type="radio" name="f" id="f-stats">Spatial statistics <small>3</small></label>
         <label class="chip"><input type="radio" name="f" id="f-net">Networks and SQL <small>2</small></label>
       </fieldset>
 
       <div class="grid">
+        <article class="card" data-t="geoai rs">
+          <img loading="lazy" src="assets/img/shrubs-hero.webp" width="1200" height="675" alt="Desert shrub crowns on 0.6 m NAIP imagery outlined against lidar crowns, next to the same 100 m in 10 m Sentinel-2 pixels with lidar shrub cover in each pixel.">
+          <h3>Desert shrub crowns, and what Sentinel-2 can see</h3>
+          <div>
+            <ul class="tags"><li>Segment Anything</li><li>NAIP</li><li>lidar</li><li>Sentinel-2</li></ul>
+            <p>Shrub crowns at the NEON Jornada site, New Mexico, detected on 0.6 m NAIP with Segment Anything and an index + watershed baseline, scored against 114,481 crowns from a NEON lidar canopy height model on held-out blocks. Lidar cover per 10 m pixel is then compared with Sentinel-2, with a short add-on on saxaul plantings on the dried Aral Sea bed.</p>
+            <p class="result">All detectors found about half of the lidar crowns (F1 0.52 to 0.53; SAM no better than the baseline), and crowns under 4 m² were mostly missed. In the dry season a 10 m Sentinel-2 pixel separated shrubs from bare soil only from about 15% cover (6% at 20 to 30 m), and not at all in the monsoon.</p>
+          </div>
+          <footer><a href="https://github.com/landon2199/dryland-shrub-crowns">Code and README →</a></footer>
+        </article>
+
         <article class="card" data-t="rs">
           <img loading="lazy" src="assets/img/rice-hero.webp" width="1200" height="675" alt="Sentinel-1 radar map of rice and corn around El Campo, Texas, in 2021, next to the USDA Cropland Data Layer.">
           <h3>Rice vs corn from Sentinel-1 radar</h3>
